@@ -69,11 +69,16 @@
 /*picture container size*/
 .about-image-container {
   max-width: 700px;
+  height: 401px;
   margin: 0 auto;
+  vertical-align: top;
+  padding: 0;
 }
 
 .about-image-container > svg {
   width: 100%;
+  height: 401px;
+  display: block;
 }
 
 /*samples page format*/
@@ -142,6 +147,11 @@ body {
   font-weight: var(--standardfontweight);
   font-size: 16px;
   line-height: 1.6;
+}
+
+.engineering-text {
+  color: darkgoldenrod;
+  background-color: #222222;
 }
 
 .page-header {
