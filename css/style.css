@@ -81,6 +81,9 @@
   display: block;
 }
 
+.trust-link {
+}
+
 /*samples page format*/
 /*create grid*/
 .page-title {
@@ -106,14 +109,36 @@
   max-width: 300px; /*trying to make sure does not get bigger than 300px on big screens*/
 }
 
+.grid__item-portfolio-pic {
+  width: 200px;
+  height: 200px;
+}
+
 /*contact page format*/
 .Contact_info {
-  display: inline-block;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 10px auto;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5%;
+  padding: 15px;
+  box-shadow: 10px 10px 5px #c6a4ff;
+  text-align: center;
+
   /*how do I get text to align left but have the div container centered in middle of page? And I want width of container to fit the content*/
 }
 
+.Contact_info__text {
+  text-align: center;
+}
+
+.Contact_info__h1 {
+  margin: 0 auto;
+}
+
+.call-to-action {
+  font-weight: var(--boldfont);
+}
 /*back ground colors*/
 :root {
   --primary-color: #4d1b7b;
@@ -195,6 +220,26 @@ a:active {
   color: #000;
 }
 
+.grid {
+  color: white;
+}
+
+.grid__item {
+  color: white;
+}
+
+.grid__item-link {
+  color: white;
+}
+
+.grid__item-link:visited {
+  color: white;
+}
+
+.grid__item-link:active {
+  color: white;
+}
+
 /*button types*/
 button,
 .button {
@@ -235,8 +280,8 @@ button:focus,
   /* takes the font from the outer container */
   font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: #4d1b7b;
-  color: white;
+  background-color: white;
+  color: var(--primary-color);
   text-decoration: none;
   /*adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;

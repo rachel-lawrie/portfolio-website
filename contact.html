@@ -10,7 +10,7 @@
     <title>Contact Rachel Lawrie</title>
     <link rel="shortcut icon" href="img/favicon-16x16.png" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.production.css" />
   </head>
 
   <body>
@@ -53,39 +53,48 @@
 
     <main>
       <div class="Contact_info">
-        <div>
-          <h1>Contact</h1>
+        <h1 class="Contact_info__h1">Contact</h1>
+
+        <div class="Contact_info__text">
+          <div>
+            <span class="call-to-action"
+              >If interested in hiring let me know:</span
+            ><br />
+            <br />
+            email
+            <a class="grid__item-link" href="mailto:raedawnlaw@gmail.com"
+              >raedawnlaw@gmail.com</a
+            ><br />
+            cell
+            <a class="grid__item-link" href="tel:+15712143080"
+              >+1 571 214 3080</a
+            ><br />
+            or leave a message here:
+          </div>
 
           <div>
-            email <a href="mailto:raedawnlaw@gmail.com">raedawnlaw@gmail.com</a
-            ><br />
-            <!--when I tested it it doesn't open up an e-mail from broswer-->
-            cell <a href="tel:+15712143080">+1 571 214 3080</a><br />
+            <form action="" method="post" id="contact-form">
+              <label class="standard-label" for="contact-email">E-mail: </label>
+              <input type="email" id="contact-email" required /><br />
 
-            ~Reach out to discuss collaborating~
+              <label class="standard-label" for="telephone-contact"
+                >Telephone:
+              </label>
+              <input type="tel" id="telephone-contact" /><br />
+
+              <label class="standard-label" for="write-message"
+                >Message:
+              </label>
+              <textarea maxlength="240" id="write-message" required></textarea
+              ><br />
+
+              <input
+                class="form-submit-button"
+                type="submit"
+                value="Send message"
+              />
+            </form>
           </div>
-        </div>
-
-        <div>
-          <form action="" method="post" id="contact-form">
-            <label class="standard-label" for="contact-email">E-mail: </label>
-            <input type="email" id="contact-email" required /><br />
-
-            <label class="standard-label" for="telephone-contact"
-              >Telephone:
-            </label>
-            <input type="tel" id="telephone-contact" /><br />
-
-            <label class="standard-label" for="write-message">Message: </label>
-            <textarea maxlength="240" id="write-message" required></textarea
-            ><br />
-
-            <input
-              class="form-submit-button"
-              type="submit"
-              value="Send message"
-            />
-          </form>
         </div>
       </div>
 

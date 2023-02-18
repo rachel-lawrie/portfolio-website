@@ -1,32 +1,20 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 /*background color #e6d7ff*/
 /*primary color #4d1b7b*/
 /*supporting color #363b74*/
 
 /*page layout*/
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 /*header format*/
 .page-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   padding: 20px;
 }
 
 .page-header__item {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 200px;
   flex: 0 1 200px;
 }
 /*^this doesn't seem to be working... rather than nav bar shrinking it wraps*/
@@ -41,8 +29,6 @@
 }
 
 .page-header__item:last-child {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
   text-align: right;
 }
@@ -50,12 +36,7 @@
 /* clears the float components from the footer */
 .page-footer {
   clear: both;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   text-align: center;
 }
@@ -88,11 +69,19 @@
 /*picture container size*/
 .about-image-container {
   max-width: 700px;
+  height: 401px;
   margin: 0 auto;
+  vertical-align: top;
+  padding: 0;
 }
 
 .about-image-container > svg {
   width: 100%;
+  height: 401px;
+  display: block;
+}
+
+.trust-link {
 }
 
 /*samples page format*/
@@ -105,9 +94,7 @@
 .grid {
   width: 100%; /*ensures columns take up whole container*/
   max-width: 900px; /*trying to make max width container so never more than 3 columns*/
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
   grid-template-columns: 1fr 1fr 1fr; /*I feel like I need to remove this to have them wrap on smaller screens but can't figure out
             how to get the 3 columns on bigger screens without this*/
   grid-gap: 20px;
@@ -122,42 +109,78 @@
   max-width: 300px; /*trying to make sure does not get bigger than 300px on big screens*/
 }
 
+.grid__item-portfolio-pic {
+  width: 200px;
+  height: 200px;
+}
+
 /*contact page format*/
 .Contact_info {
-  display: inline-block;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 10px auto;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5%;
+  padding: 15px;
+  box-shadow: 10px 10px 5px #c6a4ff;
+  text-align: center;
+
   /*how do I get text to align left but have the div container centered in middle of page? And I want width of container to fit the content*/
 }
 
+.Contact_info__text {
+  text-align: center;
+}
+
+.Contact_info__h1 {
+  margin: 0 auto;
+}
+
+.call-to-action {
+  font-weight: var(--boldfont);
+}
 /*back ground colors*/
+:root {
+  --primary-color: #4d1b7b;
+  --secondary-color: #363b74;
+  --background-color: #e6d7ff;
+}
 
 body {
-  background-color: #e6d7ff;
+  background-color: var(--background-color);
 } /*lilac*/
 header {
   background-color: white;
 }
 footer {
-  background-color: #e6d7ff;
+  background-color: var(--background-color);
 }
 
 /*Samples page grid colors*/
 .grid__item {
-  background-color: #4d1b7b;
+  background-color: var(--primary-color);
 }
 
 /*font type and line height*/
+:root {
+  --boldfont: 700;
+  --standardfontweight: 300;
+}
 
 body {
   font-family: "Roboto-mono", sans-serif;
-  font-weight: 300;
+  font-weight: var(--standardfontweight);
   font-size: 16px;
   line-height: 1.6;
 }
 
+.engineering-text {
+  color: darkgoldenrod;
+  background-color: #222222;
+}
+
 .page-header {
-  font-weight: 700;
+  font-weight: var(--boldfont);
 }
 
 .professionalbackground__item {
@@ -186,7 +209,7 @@ a {
   color: #000;
 }
 a:visited {
-  color: #363b74;
+  color: var(--secondary-color);
 }
 a:hover,
 a:focus {
@@ -195,6 +218,26 @@ a:focus {
 }
 a:active {
   color: #000;
+}
+
+.grid {
+  color: white;
+}
+
+.grid__item {
+  color: white;
+}
+
+.grid__item-link {
+  color: white;
+}
+
+.grid__item-link:visited {
+  color: white;
+}
+
+.grid__item-link:active {
+  color: white;
 }
 
 /*button types*/
@@ -213,11 +256,7 @@ button,
   border-radius: 3px;
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
-  -webkit-transition-property: opacity;
-  -o-transition-property: opacity;
   transition-property: opacity;
 }
 
@@ -241,8 +280,8 @@ button:focus,
   /* takes the font from the outer container */
   font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: #4d1b7b;
-  color: white;
+  background-color: white;
+  color: var(--primary-color);
   text-decoration: none;
   /*adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;
@@ -265,28 +304,15 @@ button:focus,
 }
 
 /* animation */
-@-webkit-keyframes sun-move {
-  from {
-    -webkit-transform: translate(0, 0px);
-    transform: translate(0, 0px);
-  }
-  to {
-    -webkit-transform: translate(0, -50px);
-    transform: translate(0, -50px);
-  }
-}
 @keyframes sun-move {
   from {
-    -webkit-transform: translate(0, 0px);
     transform: translate(0, 0px);
   }
   to {
-    -webkit-transform: translate(0, -50px);
     transform: translate(0, -50px);
   }
 }
 .sun1 {
-  -webkit-animation: 4s sun-move infinite alternate linear;
   animation: 4s sun-move infinite alternate linear;
 }
 
@@ -303,13 +329,11 @@ button:focus,
 }
 @media all and (max-width: 500px) {
   .grid {
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
-    -ms-grid-columns: 1fr 10px 1fr;
     grid-template-columns: 1fr 1fr;
   }
 }
