@@ -81,9 +81,6 @@
   display: block;
 }
 
-.trust-link {
-}
-
 /*samples page format*/
 /*create grid*/
 .page-title {
@@ -317,6 +314,20 @@ button:focus,
 }
 
 /*responsive on small screens*/
+
+/*about page*/
+@media all and (max-width: 500px) {
+  .profile {
+    width: 100%;
+    padding: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .profile__portrait {
+    max-width: 200px;
+    float: none;
+  }
+}
 
 /*samples page*/
 @media all and (max-width: 750px) {
