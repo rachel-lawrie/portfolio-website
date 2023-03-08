@@ -295,6 +295,11 @@ button:focus,
   opacity: 0.8;
 }
 
+.error-message {
+  color: orange;
+  font-size: 0.8em;
+}
+
 /* link behavior */
 .navigation-list__item--active {
   text-decoration: none;
