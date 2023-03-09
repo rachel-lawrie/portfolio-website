@@ -1,4 +1,4 @@
-(function () {
+const formValidation = (function () {
   let form = document.querySelector("#contact-form");
   let emailInput = document.querySelector("#contact-email");
 
@@ -41,4 +41,8 @@
     showErrorMessage(emailInput, null);
     return true;
   }
+
+  return {
+    validateEmail,
+  };
 })();
