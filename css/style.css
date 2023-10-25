@@ -106,7 +106,7 @@
   max-width: 300px; /*trying to make sure does not get bigger than 300px on big screens*/
 }
 
-.grid__item-portfolio-pic {
+.grid__item-pic {
   width: 200px;
   height: 200px;
 }
